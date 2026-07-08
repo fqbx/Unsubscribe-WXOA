@@ -1,0 +1,5 @@
+uiautomator2>=3.2
+adbutils
+customtkinter
+PyYAML
+loguru

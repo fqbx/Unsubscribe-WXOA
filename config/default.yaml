@@ -1,0 +1,56 @@
+wechat:
+  package: com.tencent.mm
+
+delays:
+  min_seconds: 1.5
+  max_seconds: 3.0
+  click_timeout: 5
+
+batch:
+  max_count: 1
+  max_retries: 3
+  consecutive_fail_limit: 5
+
+# 前提：手动打开微信「公众号」列表页
+# 荣耀参考 1264×2800；确认框坐标使用 content 模式（扣除状态栏后缩放）
+
+first_item:
+  reference_resolution:
+    width: 1264
+    height: 2800
+  first_item:
+    x_left: 0
+    x_right: 1264
+    y_top: 350
+    y_bottom: 550
+
+# 流程：长按第一条 → 浮层「不再关注」→ 中间确认框「不再关注」
+confirm_dialog:
+  reference_resolution:
+    width: 1264
+    height: 2800
+  status_bar_height: 135
+  coordinate_origin: content
+  dialog:
+    x_left: 130
+    x_right: 1134
+    y_top: 1725
+    y_bottom: 2100
+  unfollow_button:
+    x_left: 632
+    x_right: 1134
+    y_top: 1536
+    y_bottom: 1727
+
+unfollow:
+  long_press_duration: 1.5
+  popup_width: 160
+  popup_height: 72
+
+screenshots:
+  enabled: true
+  directory: logs/screenshots
+
+logging:
+  level: INFO
+  directory: logs
